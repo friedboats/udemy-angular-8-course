@@ -31,17 +31,28 @@
 
 - **Component Decorator**
     - **selector**
-      - The HTML tag in which your abel to use later in your other component's templates. Must be unique.
+      - The HTML tag in which your able to use later in your other component's templates that use this component. Must be unique.
       - Usually preceeded by 'app-' and then the name of the component.
     - **templateURL**
       - References an external HTML file.
     - **template**
       - You can add inline template code inside of this property.
       - This must be in one line when using quotes.
-      - You can do multi-line with JavaScript template expressions, using back ticks.
+      - You can do a multi-line with JavaScript template multi-line expressions, using back ticks.
+    - **styleUrls**
+      - In an array b/c you can reference multiple styles here.
+      - This trumps the _styles_ decorator, if you have both (not that you would want that, but it let's you put both in without errors)
+    - **styles**
+      - I an array for string styles.
+      - Use back ticks for JavaScript multi-line expressions.  
+    - **Example:**
        ```
       @Component({
-        selector: 'app-server'
+        selector: 'app-server' // <app-server></app-server>
+        //OR
+        selector: '[app-server]' // <div app-server></div> can use the selector as an attribute
+        //OR
+        selector: '.app-server' // <div class="app-server"></div> can use the selector as a class. Selecting by id will not work.
         templateUrl: './servers.component.html',
         //OR
         template: '<app-server></app-server><app-server></app-server>',
@@ -50,11 +61,17 @@
           <app-server></app-server>
           <app-server></app-server>`
         styleUrls: ['./servers.component.scss']
+        //OR
+        styles: [`
+          h3 {
+            color: yellow;
+          }
+        `]
       })
       ```
     - **NOTES**
       - Each Component must have a template property, either **templateURL** or **template**. This is the one property that you have to have at all times.
-      - Rule of thumb is that if you have 3 or more lines to create an HTML file.
+      - Rule of thumb is that if you have 3 or more lines to create an HTML file / SCSS file.
 - **NgModule Decorator (FYI this is used in app.module.ts)**
     - **declarations**
       - Angular will not scan all of your files. If you don't tell Angular that your component exists, it will not know it.
