@@ -90,6 +90,46 @@
       - Responsible for telling Angular which component to be aware of when the application starts. 
       - Which file should you recognize in the index.html file.
       - We won't add any more component selectors to the index.hmtl file, only one.
+    - **Example:**
+      ```
+      import { BrowserModule } from '@angular/platform-browser';
+      import { NgModule } from '@angular/core';
+
+      import { AppRoutingModule } from './app-routing.module';
+      import { AppComponent } from './app.component';
+      import { ServerComponent } from './server/server.component';
+      import { ServersComponent } from './servers/servers.component';
+
+      @NgModule({
+        declarations: [
+          AppComponent,
+          ServerComponent,
+          ServersComponent
+        ],
+        imports: [
+          BrowserModule,
+          AppRoutingModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+      })
+      export class AppModule { }
+      ```
 
 ## imports
 - You do not add the extension to the TyprScript class name when importing the file.
+
+## Databinding
+- Communication between your business logic (TypeScript) and the template (HTML).
+  - **String Interpolation**
+    - Outputs data from .ts file to the .html file. 
+    - Any expression that can be resolved to a string in the end.
+    - <div>{{ data }}</div>
+  - **Property Binding**
+    - Outputs data from .ts file to the .html file.
+    - [property]="data"
+  - **Event Binding**
+    - Reacts to user events from .html file to the .ts file.
+    - (event)="expression"
+  - **Two-Way-Binding**
+    - Abel to react to events ADN output something at the same time.
