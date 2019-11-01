@@ -128,6 +128,7 @@
   - **Property Binding**
     - Outputs data from .ts file to the .html file.
     - [property]="data"
+    - Can bind to pretty much all of the HTML properties.
   - **Event Binding**
     - Reacts to user events from .html file to the .ts file.
     - (event)="expression"
