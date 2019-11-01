@@ -131,6 +131,6 @@
     - Can bind to pretty much all of the HTML properties.
   - **Event Binding**
     - Reacts to user events from .html file to the .ts file.
-    - (event)="expression"
+    - (event)="expression()"
   - **Two-Way-Binding**
     - Abel to react to events ADN output something at the same time.
