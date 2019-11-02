@@ -1,1 +1,10 @@
-<h2>This is a title!</h2>
+<label>User Name</label>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username"/>
+<p>{{ username }}</p>
+<button 
+    class="btn btn-primary"
+    [disabled]="usernameIsBlank"
+    (click)="onClearInput()">Clear</button>
