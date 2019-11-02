@@ -132,5 +132,11 @@
   - **Event Binding**
     - Reacts to user events from .html file to the .ts file.
     - (event)="expression()"
+    - We can passin $event in the expression($event).
+    - $event will capture all of the data emitted from that event.
   - **Two-Way-Binding**
-    - Abel to react to events ADN output something at the same time.
+    - Able to react to events AND output something at the same time.
+    - [(ngModel)]="serverName"
+      - It will trigger on the input event and update the value of serverName in our component automatically.
+      - It will also update the value of the input element if we change serverName somewhere else.
+      - The two way data binding isn't really binding to the input event, it's the way the ngModel directive works: It passes any changes in the value of the given object to the input element and vice versa.
