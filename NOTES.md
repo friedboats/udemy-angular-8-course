@@ -140,3 +140,26 @@
       - It will trigger on the input event and update the value of serverName in our component automatically.
       - It will also update the value of the input element if we change serverName somewhere else.
       - The two way data binding isn't really binding to the input event, it's the way the ngModel directive works: It passes any changes in the value of the given object to the input element and vice versa.
+
+## Directives
+  - Are instrucitons in the DOM.
+  - Type of Directives:
+    - **Components** 
+      - Are directives (instrucitons in the DOM)
+      - They use a template.
+    - **Built in Directives**
+      - There are directives without a template.
+      - ***ngIf (structural directive)**
+        - * is required b/c ngIf is a *structural directive*, which means it changes the structure of our DOM. Either adds the element or it doesn't.
+        - Elements are not hidden, they are just not there.
+        - <p *ngIf="serverCreated; else noServer">If context.</p>
+          <ng-template #noServer>
+              <p>Else context.</p>
+          </ng-template>
+      - **ngStyle (attribute directive)**
+        - We need to set up configs for this Directive using property binding.
+        - [ngStyle]="{'background-color': getColor()}"
+      - **ngClass (attribute directive)**
+        - We need to set up configs for this Directive using property binding.
+        - [ngClass]="{className: getBooleanConditional()}"
+  - Typically, we add directives using the attribute selector style.
