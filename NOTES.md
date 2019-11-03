@@ -142,7 +142,7 @@
       - The two way data binding isn't really binding to the input event, it's the way the ngModel directive works: It passes any changes in the value of the given object to the input element and vice versa.
 
 ## Directives
-  - Are instrucitons in the DOM.
+  - Are instructions in the DOM.
   - Type of Directives:
     - **Components** 
       - Are directives (instrucitons in the DOM)
